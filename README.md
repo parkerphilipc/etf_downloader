@@ -1,5 +1,6 @@
 # ETF Downloader
 
+## Running Script
 ```
 python main.py
 ```
@@ -17,3 +18,28 @@ flags:
   - Whether to only download and not parse ETF data
 - `--etfs` (optional, defaults to all):
   - Explicitly only process the list of ETFs with these ticker symbols
+
+## `etf_config.yaml`
+
+- List of ETFs to download
+- Supports multiple data sources for each ETF. All will be downloaded.
+
+
+```
+- name: name of ETF
+  ticker_symbol: ticker symbol of ETF
+  data_sources:
+    - source_id: unique identifier to use for this data source
+      url: url of the file
+      parsing_strategy: parsing strategy to use to parse file. see: `source/parsing.py`
+```
+
+Example:
+```
+- name: "SPDR® S&P 500® ETF Trust"
+  ticker_symbol: "SPY"
+  data_sources:
+    - source_id: "ssga"
+      url: "https://www.ssga.com/us/en/intermediary/etfs/library-content/products/fund-data/etfs/us/holdings-daily-us-en-spy.xlsx"
+      parsing_strategy: "ssga"
+```
