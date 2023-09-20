@@ -1,0 +1,9 @@
+venv_etf_downloader/
+__pycache__/
+
+*.code-workspace
+
+data/
+logs/
+
+.DS_Store

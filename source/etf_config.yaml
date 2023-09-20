@@ -1,0 +1,16 @@
+---
+- name: "SPDR® S&P 500® ETF Trust"
+  ticker_symbol: "SPY"
+  data_sources:
+    - source_id: "ssga"
+      url: "https://www.ssga.com/us/en/intermediary/etfs/library-content/products/fund-data/etfs/us/holdings-daily-us-en-spy.xlsx"
+      parsing_strategy: "ssga"
+
+- name: "The Communication Services Select Sector SPDR® Fund"
+  ticker_symbol: "XLC"
+  data_sources:
+    - source_id: "ssga"
+      url: "https://www.ssga.com/us/en/intermediary/etfs/library-content/products/fund-data/etfs/us/holdings-daily-us-en-xlc.xlsx"
+      parsing_strategy: "ssga"
+
+...
